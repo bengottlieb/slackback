@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B555B3AA25F3A39C00D57F16 /* SlackImageUploaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */; };
+		B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3AB25F3A39C00D57F16 /* ContentView.swift */; };
+		B555B3AE25F3A3A200D57F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B555B3AD25F3A3A200D57F16 /* Assets.xcassets */; };
+		B555B3B125F3A3A200D57F16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */; };
+		B555B3BC25F3A3A200D57F16 /* SlackImageUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3BB25F3A3A200D57F16 /* SlackImageUploaderTests.swift */; };
+		B555B3C725F3A3A200D57F16 /* SlackImageUploaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B555B3B825F3A3A200D57F16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B555B39E25F3A39C00D57F16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B555B3A525F3A39C00D57F16;
+			remoteInfo = SlackImageUploader;
+		};
+		B555B3C325F3A3A200D57F16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B555B39E25F3A39C00D57F16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B555B3A525F3A39C00D57F16;
+			remoteInfo = SlackImageUploader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B555B3A625F3A39C00D57F16 /* SlackImageUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackImageUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackImageUploaderApp.swift; sourceTree = "<group>"; };
+		B555B3AB25F3A39C00D57F16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B555B3AD25F3A3A200D57F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B555B3B225F3A3A200D57F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B555B3B725F3A3A200D57F16 /* SlackImageUploaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackImageUploaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B555B3BB25F3A3A200D57F16 /* SlackImageUploaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackImageUploaderTests.swift; sourceTree = "<group>"; };
+		B555B3BD25F3A3A200D57F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B555B3C225F3A3A200D57F16 /* SlackImageUploaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackImageUploaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackImageUploaderUITests.swift; sourceTree = "<group>"; };
+		B555B3C825F3A3A200D57F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B555B3A325F3A39C00D57F16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3B425F3A3A200D57F16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3BF25F3A3A200D57F16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B555B39D25F3A39C00D57F16 = {
+			isa = PBXGroup;
+			children = (
+				B555B3A825F3A39C00D57F16 /* SlackImageUploader */,
+				B555B3BA25F3A3A200D57F16 /* SlackImageUploaderTests */,
+				B555B3C525F3A3A200D57F16 /* SlackImageUploaderUITests */,
+				B555B3A725F3A39C00D57F16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B555B3A725F3A39C00D57F16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B555B3A625F3A39C00D57F16 /* SlackImageUploader.app */,
+				B555B3B725F3A3A200D57F16 /* SlackImageUploaderTests.xctest */,
+				B555B3C225F3A3A200D57F16 /* SlackImageUploaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B555B3A825F3A39C00D57F16 /* SlackImageUploader */ = {
+			isa = PBXGroup;
+			children = (
+				B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */,
+				B555B3AB25F3A39C00D57F16 /* ContentView.swift */,
+				B555B3AD25F3A3A200D57F16 /* Assets.xcassets */,
+				B555B3B225F3A3A200D57F16 /* Info.plist */,
+				B555B3AF25F3A3A200D57F16 /* Preview Content */,
+			);
+			path = SlackImageUploader;
+			sourceTree = "<group>";
+		};
+		B555B3AF25F3A3A200D57F16 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B555B3BA25F3A3A200D57F16 /* SlackImageUploaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				B555B3BB25F3A3A200D57F16 /* SlackImageUploaderTests.swift */,
+				B555B3BD25F3A3A200D57F16 /* Info.plist */,
+			);
+			path = SlackImageUploaderTests;
+			sourceTree = "<group>";
+		};
+		B555B3C525F3A3A200D57F16 /* SlackImageUploaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */,
+				B555B3C825F3A3A200D57F16 /* Info.plist */,
+			);
+			path = SlackImageUploaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B555B3A525F3A39C00D57F16 /* SlackImageUploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B555B3CB25F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploader" */;
+			buildPhases = (
+				B555B3A225F3A39C00D57F16 /* Sources */,
+				B555B3A325F3A39C00D57F16 /* Frameworks */,
+				B555B3A425F3A39C00D57F16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlackImageUploader;
+			productName = SlackImageUploader;
+			productReference = B555B3A625F3A39C00D57F16 /* SlackImageUploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B555B3B625F3A3A200D57F16 /* SlackImageUploaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B555B3CE25F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploaderTests" */;
+			buildPhases = (
+				B555B3B325F3A3A200D57F16 /* Sources */,
+				B555B3B425F3A3A200D57F16 /* Frameworks */,
+				B555B3B525F3A3A200D57F16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B555B3B925F3A3A200D57F16 /* PBXTargetDependency */,
+			);
+			name = SlackImageUploaderTests;
+			productName = SlackImageUploaderTests;
+			productReference = B555B3B725F3A3A200D57F16 /* SlackImageUploaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B555B3C125F3A3A200D57F16 /* SlackImageUploaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B555B3D125F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploaderUITests" */;
+			buildPhases = (
+				B555B3BE25F3A3A200D57F16 /* Sources */,
+				B555B3BF25F3A3A200D57F16 /* Frameworks */,
+				B555B3C025F3A3A200D57F16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B555B3C425F3A3A200D57F16 /* PBXTargetDependency */,
+			);
+			name = SlackImageUploaderUITests;
+			productName = SlackImageUploaderUITests;
+			productReference = B555B3C225F3A3A200D57F16 /* SlackImageUploaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B555B39E25F3A39C00D57F16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					B555B3A525F3A39C00D57F16 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					B555B3B625F3A3A200D57F16 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B555B3A525F3A39C00D57F16;
+					};
+					B555B3C125F3A3A200D57F16 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B555B3A525F3A39C00D57F16;
+					};
+				};
+			};
+			buildConfigurationList = B555B3A125F3A39C00D57F16 /* Build configuration list for PBXProject "SlackImageUploader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B555B39D25F3A39C00D57F16;
+			productRefGroup = B555B3A725F3A39C00D57F16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B555B3A525F3A39C00D57F16 /* SlackImageUploader */,
+				B555B3B625F3A3A200D57F16 /* SlackImageUploaderTests */,
+				B555B3C125F3A3A200D57F16 /* SlackImageUploaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B555B3A425F3A39C00D57F16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B555B3B125F3A3A200D57F16 /* Preview Assets.xcassets in Resources */,
+				B555B3AE25F3A3A200D57F16 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3B525F3A3A200D57F16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3C025F3A3A200D57F16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B555B3A225F3A39C00D57F16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */,
+				B555B3AA25F3A39C00D57F16 /* SlackImageUploaderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3B325F3A3A200D57F16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B555B3BC25F3A3A200D57F16 /* SlackImageUploaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555B3BE25F3A3A200D57F16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B555B3C725F3A3A200D57F16 /* SlackImageUploaderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B555B3B925F3A3A200D57F16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B555B3A525F3A39C00D57F16 /* SlackImageUploader */;
+			targetProxy = B555B3B825F3A3A200D57F16 /* PBXContainerItemProxy */;
+		};
+		B555B3C425F3A3A200D57F16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B555B3A525F3A39C00D57F16 /* SlackImageUploader */;
+			targetProxy = B555B3C325F3A3A200D57F16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B555B3C925F3A3A200D57F16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B555B3CA25F3A3A200D57F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B555B3CC25F3A3A200D57F16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackImageUploader/Preview Content\"";
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SlackImageUploader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B555B3CD25F3A3A200D57F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackImageUploader/Preview Content\"";
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SlackImageUploader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B555B3CF25F3A3A200D57F16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				INFOPLIST_FILE = SlackImageUploaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackImageUploader.app/SlackImageUploader";
+			};
+			name = Debug;
+		};
+		B555B3D025F3A3A200D57F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				INFOPLIST_FILE = SlackImageUploaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackImageUploader.app/SlackImageUploader";
+			};
+			name = Release;
+		};
+		B555B3D225F3A3A200D57F16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				INFOPLIST_FILE = SlackImageUploaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlackImageUploader;
+			};
+			name = Debug;
+		};
+		B555B3D325F3A3A200D57F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6CWUX533;
+				INFOPLIST_FILE = SlackImageUploaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.SlackImageUploaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlackImageUploader;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B555B3A125F3A39C00D57F16 /* Build configuration list for PBXProject "SlackImageUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B555B3C925F3A3A200D57F16 /* Debug */,
+				B555B3CA25F3A3A200D57F16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B555B3CB25F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B555B3CC25F3A3A200D57F16 /* Debug */,
+				B555B3CD25F3A3A200D57F16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B555B3CE25F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B555B3CF25F3A3A200D57F16 /* Debug */,
+				B555B3D025F3A3A200D57F16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B555B3D125F3A3A200D57F16 /* Build configuration list for PBXNativeTarget "SlackImageUploaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B555B3D225F3A3A200D57F16 /* Debug */,
+				B555B3D325F3A3A200D57F16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B555B39E25F3A39C00D57F16 /* Project object */;
+}
