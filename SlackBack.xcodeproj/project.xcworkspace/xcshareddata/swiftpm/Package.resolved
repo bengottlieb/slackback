@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Marcel",
+        "repositoryURL": "https://github.com/bengottlieb/marcel",
+        "state": {
+          "branch": null,
+          "revision": "03af777c3bba6d76fe1eb14c03441276a1e50e62",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "Suite",
+        "repositoryURL": "https://github.com/bengottlieb/suite",
+        "state": {
+          "branch": null,
+          "revision": "317e8a61606df9bdd20a44ba8aa0302b6ae8c192",
+          "version": "0.10.37"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
