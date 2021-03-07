@@ -9,6 +9,13 @@ import SwiftUI
 import Suite
 import UIKit
 
+/*
+	Need to go to https://api.slack.com/apps/[YOUR APP ID]/install-on-team
+	<Reinstall to Workspace>
+	
+	Then in the channel (web or app) select "More…" > "Add Apps", and add the test app to your channel
+*/
+
 @main
 struct SlackBackApp: App {
 	init() {
@@ -35,6 +42,11 @@ struct SlackBackApp: App {
 		NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification).eraseToAnyPublisher()
 			.onCompletion { result in
 				print("Inactive: \(result)")
+			}
+		
+		ImageUploadRequest(file: Bundle.main.url(forResource: "sample_upload", withExtension: "jpeg")!, channel: "test", comment: "Upload Test \(Date())")?.upload()
+			.onCompletion { result in
+				print(result)
 			}
 	}
 	
