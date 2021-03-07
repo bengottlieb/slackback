@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B555B3AA25F3A39C00D57F16 /* SlackImageUploaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */; };
+		B555B3AA25F3A39C00D57F16 /* SlackBackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3A925F3A39C00D57F16 /* SlackBackApp.swift */; };
 		B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3AB25F3A39C00D57F16 /* ContentView.swift */; };
 		B555B3AE25F3A3A200D57F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B555B3AD25F3A3A200D57F16 /* Assets.xcassets */; };
 		B555B3B125F3A3A200D57F16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		B555B3A625F3A39C00D57F16 /* SlackBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackImageUploaderApp.swift; sourceTree = "<group>"; };
+		B555B3A925F3A39C00D57F16 /* SlackBackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackBackApp.swift; sourceTree = "<group>"; };
 		B555B3AB25F3A39C00D57F16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B555B3AD25F3A3A200D57F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 		B555B39D25F3A39C00D57F16 = {
 			isa = PBXGroup;
 			children = (
-				B555B3A825F3A39C00D57F16 /* SlackImageUploader */,
-				B555B3BA25F3A3A200D57F16 /* SlackImageUploaderTests */,
-				B555B3C525F3A3A200D57F16 /* SlackImageUploaderUITests */,
+				B555B3A825F3A39C00D57F16 /* SlackBack */,
+				B555B3BA25F3A3A200D57F16 /* SlackBackTests */,
+				B555B3C525F3A3A200D57F16 /* SlackBackUITests */,
 				B555B3A725F3A39C00D57F16 /* Products */,
 			);
 			indentWidth = 2;
@@ -107,20 +107,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B555B3A825F3A39C00D57F16 /* SlackImageUploader */ = {
+		B555B3A825F3A39C00D57F16 /* SlackBack */ = {
 			isa = PBXGroup;
 			children = (
-				B555B3A925F3A39C00D57F16 /* SlackImageUploaderApp.swift */,
+				B555B3A925F3A39C00D57F16 /* SlackBackApp.swift */,
 				B555B3AB25F3A39C00D57F16 /* ContentView.swift */,
 				B555B3D725F3A3B100D57F16 /* ImageUploadRequest.swift */,
-				B56CEDD425F404BF005E185B /* sample_upload.jpeg */,
-				B5DED7DD25F3ACA2008B0994 /* sample_upload.png */,
+				B5DED7F925F4EB96008B0994 /* Resources */,
 				B555B3E125F3A5C200D57F16 /* tokens */,
-				B555B3AD25F3A3A200D57F16 /* Assets.xcassets */,
-				B555B3B225F3A3A200D57F16 /* Info.plist */,
-				B555B3AF25F3A3A200D57F16 /* Preview Content */,
 			);
-			path = SlackImageUploader;
+			path = SlackBack;
 			sourceTree = "<group>";
 		};
 		B555B3AF25F3A3A200D57F16 /* Preview Content */ = {
@@ -131,22 +127,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B555B3BA25F3A3A200D57F16 /* SlackImageUploaderTests */ = {
+		B555B3BA25F3A3A200D57F16 /* SlackBackTests */ = {
 			isa = PBXGroup;
 			children = (
 				B555B3BB25F3A3A200D57F16 /* SlackImageUploaderTests.swift */,
 				B555B3BD25F3A3A200D57F16 /* Info.plist */,
 			);
-			path = SlackImageUploaderTests;
+			path = SlackBackTests;
 			sourceTree = "<group>";
 		};
-		B555B3C525F3A3A200D57F16 /* SlackImageUploaderUITests */ = {
+		B555B3C525F3A3A200D57F16 /* SlackBackUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */,
 				B555B3C825F3A3A200D57F16 /* Info.plist */,
 			);
-			path = SlackImageUploaderUITests;
+			path = SlackBackUITests;
+			sourceTree = "<group>";
+		};
+		B5DED7F925F4EB96008B0994 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B56CEDD425F404BF005E185B /* sample_upload.jpeg */,
+				B5DED7DD25F3ACA2008B0994 /* sample_upload.png */,
+				B555B3AD25F3A3A200D57F16 /* Assets.xcassets */,
+				B555B3B225F3A3A200D57F16 /* Info.plist */,
+				B555B3AF25F3A3A200D57F16 /* Preview Content */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */,
-				B555B3AA25F3A39C00D57F16 /* SlackImageUploaderApp.swift in Sources */,
+				B555B3AA25F3A39C00D57F16 /* SlackBackApp.swift in Sources */,
 				B555B3D825F3A3B100D57F16 /* ImageUploadRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,10 +457,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SlackImageUploader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlackBack/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SlackImageUploader/Info.plist;
+				INFOPLIST_FILE = SlackBack/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,10 +479,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SlackImageUploader/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlackBack/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SlackImageUploader/Info.plist;
+				INFOPLIST_FILE = SlackBack/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

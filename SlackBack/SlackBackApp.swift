@@ -1,6 +1,6 @@
 //
-//  SlackImageUploaderApp.swift
-//  SlackImageUploader
+//  SlackBackApp.swift
+//  SlackBack
 //
 //  Created by Ben Gottlieb on 3/6/21.
 //
@@ -10,7 +10,7 @@ import Suite
 import UIKit
 
 @main
-struct SlackImageUploaderApp: App {
+struct SlackBackApp: App {
 	init() {
 		guard
 			let tokenURL = Bundle.main.url(forResource: "token", withExtension: "json", subdirectory: "tokens"),

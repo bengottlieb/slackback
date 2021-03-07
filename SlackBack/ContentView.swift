@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SlackImageUploader
+//  SlackBack
 //
 //  Created by Ben Gottlieb on 3/6/21.
 //
