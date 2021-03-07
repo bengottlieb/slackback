@@ -13,12 +13,13 @@
 		B555B3B125F3A3A200D57F16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B555B3B025F3A3A200D57F16 /* Preview Assets.xcassets */; };
 		B555B3BC25F3A3A200D57F16 /* SlackImageUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3BB25F3A3A200D57F16 /* SlackImageUploaderTests.swift */; };
 		B555B3C725F3A3A200D57F16 /* SlackImageUploaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */; };
-		B555B3D825F3A3B100D57F16 /* ImageUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555B3D725F3A3B100D57F16 /* ImageUploadRequest.swift */; };
 		B56CEDC625F3F4B6005E185B /* Marcel in Frameworks */ = {isa = PBXBuildFile; productRef = B56CEDC525F3F4B6005E185B /* Marcel */; };
 		B56CEDD525F404BF005E185B /* sample_upload.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B56CEDD425F404BF005E185B /* sample_upload.jpeg */; };
 		B5DED7DE25F3ACA2008B0994 /* sample_upload.png in Resources */ = {isa = PBXBuildFile; fileRef = B5DED7DD25F3ACA2008B0994 /* sample_upload.png */; };
 		B5DED7E625F3AD02008B0994 /* Suite in Frameworks */ = {isa = PBXBuildFile; productRef = B5DED7E525F3AD02008B0994 /* Suite */; };
 		B5DED80325F4EEFB008B0994 /* tokens in Resources */ = {isa = PBXBuildFile; fileRef = B5DED80225F4EEFB008B0994 /* tokens */; };
+		B5DED81625F4F1C9008B0994 /* ScreenshotListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED81425F4F1C9008B0994 /* ScreenshotListener.swift */; };
+		B5DED81725F4F1C9008B0994 /* ImageUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		B555B3C225F3A3A200D57F16 /* SlackBackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackBackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B555B3C625F3A3A200D57F16 /* SlackImageUploaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackImageUploaderUITests.swift; sourceTree = "<group>"; };
 		B555B3C825F3A3A200D57F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B555B3D725F3A3B100D57F16 /* ImageUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadRequest.swift; sourceTree = "<group>"; };
 		B56CEDD425F404BF005E185B /* sample_upload.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample_upload.jpeg; sourceTree = "<group>"; };
 		B5DED7DD25F3ACA2008B0994 /* sample_upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_upload.png; sourceTree = "<group>"; };
 		B5DED80225F4EEFB008B0994 /* tokens */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tokens; sourceTree = "<group>"; };
+		B5DED81425F4F1C9008B0994 /* ScreenshotListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotListener.swift; sourceTree = "<group>"; };
+		B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		B555B39D25F3A39C00D57F16 = {
 			isa = PBXGroup;
 			children = (
+				B5DED81225F4F1C9008B0994 /* Sources */,
 				B555B3A825F3A39C00D57F16 /* SlackBack */,
 				B555B3BA25F3A3A200D57F16 /* SlackBackTests */,
 				B555B3C525F3A3A200D57F16 /* SlackBackUITests */,
@@ -112,7 +115,6 @@
 			children = (
 				B555B3A925F3A39C00D57F16 /* SlackBackApp.swift */,
 				B555B3AB25F3A39C00D57F16 /* ContentView.swift */,
-				B555B3D725F3A3B100D57F16 /* ImageUploadRequest.swift */,
 				B5DED7F925F4EB96008B0994 /* Resources */,
 			);
 			path = SlackBack;
@@ -155,6 +157,23 @@
 				B555B3AF25F3A3A200D57F16 /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5DED81225F4F1C9008B0994 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B5DED81325F4F1C9008B0994 /* SlackBack */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B5DED81325F4F1C9008B0994 /* SlackBack */ = {
+			isa = PBXGroup;
+			children = (
+				B5DED81425F4F1C9008B0994 /* ScreenshotListener.swift */,
+				B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */,
+			);
+			path = SlackBack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,8 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */,
+				B5DED81625F4F1C9008B0994 /* ScreenshotListener.swift in Sources */,
 				B555B3AA25F3A39C00D57F16 /* SlackBackApp.swift in Sources */,
-				B555B3D825F3A3B100D57F16 /* ImageUploadRequest.swift in Sources */,
+				B5DED81725F4F1C9008B0994 /* ImageUploadRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
