@@ -27,8 +27,17 @@ struct SlackBackApp: App {
 			fatalError("Please grab a Slack token for your Slack app, and save it in a file called `token.json` in the `tokens` directory.")
 		}
 		
-		ImageUploadRequest.authToken = token
-		ScreenshotListener.instance.startListening()
+		ScreenshotListener.instance.startListening(withToken: token, channel: "test")
+		
+//		if let image = UIImage(contentsOf: Bundle.main.url(forResource: "screenshot", withExtension: "png")!) {
+//			DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+//				FeedbackForm.present(image: image)
+//			}
+//		}
+			
+//		DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+//			ScreenshotToast.promptForComment(duration: 3) { cancelled in  print(cancelled ? "Canceled" : "Tapped") }
+//		}
 	}
 	
 	var body: some Scene {

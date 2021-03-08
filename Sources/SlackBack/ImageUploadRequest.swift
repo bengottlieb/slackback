@@ -8,11 +8,15 @@
 import Foundation
 import Combine
 import Marcel
+import UIKit
 
 // curl -F file=@shot.png -F "initial_comment=Screen shot" -F channels=test -H "Authorization: Bearer xoxb-XXXXXXXXXXXXXXXX" https://slack.com/api/files.upload
 
 public struct ImageUploadRequest {
 	public static var authToken: String?
+	public static var defaultChannel = ""
+
+
 	public static var session = URLSession.shared
 	
 	public enum UploadError: Error, LocalizedError { case noToken, failedToConstructURL, filePayloadNotFound, slackError(String)
@@ -28,22 +32,47 @@ public struct ImageUploadRequest {
 	
 	static let endpoint = "https://slack.com/api/files.upload"
 	
-	let file: URL
+	let data: Data!
 	let channel: String
 	let comment: String
+	let filename: String
 	
-	public init?(file: URL, channel: String, comment: String) {
-		self.file = file
+	public init(data: Data, filename: String, channel: String = ImageUploadRequest.defaultChannel, comment: String) {
 		self.channel = channel
 		self.comment = comment
+		self.data = data
+		self.filename = filename
+	}
+	
+	public init?(image: UIImage, filename: String, channel: String = ImageUploadRequest.defaultChannel, comment: String) {
+		self.channel = channel
+		self.comment = comment
+		self.filename = filename
+		
+		guard let data = image.jpegData(compressionQuality: 0.95) else {
+			self.data = nil
+			return nil
+		}
+		self.data = data
+	}
+	
+	public init?(file: URL, channel: String = ImageUploadRequest.defaultChannel, comment: String) {
+		self.channel = channel
+		self.comment = comment
+		self.filename = file.lastPathComponent
 		
 		var isDirectory: ObjCBool = false
-		if !file.isFileURL || !FileManager.default.fileExists(atPath: file.path, isDirectory: &isDirectory) || isDirectory.boolValue { return nil }
+		if !file.isFileURL || !FileManager.default.fileExists(atPath: file.path, isDirectory: &isDirectory) || isDirectory.boolValue {
+			data = nil
+			return nil
+		}
+
+		self.data = try? Data(contentsOf: file)
 	}
 	
 	public func upload() -> AnyPublisher<UploadedImage, Error> {
 		guard let token = Self.authToken else { return Fail(outputType: UploadedImage.self, failure: UploadError.noToken).eraseToAnyPublisher() }
-		guard let data = try? Data(contentsOf: file) else { return Fail(outputType: UploadedImage.self, failure: UploadError.filePayloadNotFound).eraseToAnyPublisher() }
+		guard let data = data else { return Fail(outputType: UploadedImage.self, failure: UploadError.filePayloadNotFound).eraseToAnyPublisher() }
 		let url = URL(string: Self.endpoint)!
 		var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
 		
@@ -54,7 +83,7 @@ public struct ImageUploadRequest {
 		guard let finalURL = components.url else { return Fail(outputType: UploadedImage.self, failure: UploadError.failedToConstructURL).eraseToAnyPublisher() }
 		var request = URLRequest(url: finalURL)
 		let mime = MIMEBundle(content: [
-			MIMEBundle.Chunk(content: data, name: "file", filename: file.lastPathComponent, contentType: "image/jpeg"),
+			MIMEBundle.Chunk(content: data, name: "file", filename: filename, contentType: "image/jpeg"),
 		])
 		
 		request.addValue("Bearer " + token.trimmingCharacters(in: .whitespacesAndNewlines), forHTTPHeaderField: "Authorization")
