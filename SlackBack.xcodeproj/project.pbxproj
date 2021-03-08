@@ -26,6 +26,8 @@
 		B5DED80325F4EEFB008B0994 /* tokens in Resources */ = {isa = PBXBuildFile; fileRef = B5DED80225F4EEFB008B0994 /* tokens */; };
 		B5DED81625F4F1C9008B0994 /* ScreenshotListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED81425F4F1C9008B0994 /* ScreenshotListener.swift */; };
 		B5DED81725F4F1C9008B0994 /* ImageUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */; };
+		B5DED82A25F63D54008B0994 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED82925F63D54008B0994 /* FeedbackView.swift */; };
+		B5DED83225F64027008B0994 /* PencilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DED83125F64027008B0994 /* PencilView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		B5DED80225F4EEFB008B0994 /* tokens */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tokens; sourceTree = "<group>"; };
 		B5DED81425F4F1C9008B0994 /* ScreenshotListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotListener.swift; sourceTree = "<group>"; };
 		B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadRequest.swift; sourceTree = "<group>"; };
+		B5DED82925F63D54008B0994 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		B5DED83125F64027008B0994 /* PencilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +194,20 @@
 				B5DED81525F4F1C9008B0994 /* ImageUploadRequest.swift */,
 				B56CEE5725F4FF5B005E185B /* ScreenshotGrabber.swift */,
 				B524056125F5646000C806BB /* ScreenshotToast.swift */,
+				B5DED83B25F6484F008B0994 /* Extensions */,
+				B5DED82925F63D54008B0994 /* FeedbackView.swift */,
+				B5DED83125F64027008B0994 /* PencilView.swift */,
+			);
+			path = SlackBack;
+			sourceTree = "<group>";
+		};
+		B5DED83B25F6484F008B0994 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				B524056B25F57D1A00C806BB /* UIWindow.swift */,
 				B524057025F57D3100C806BB /* PHAsset.swift */,
 			);
-			path = SlackBack;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,12 +352,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56CEE5825F4FF5B005E185B /* ScreenshotGrabber.swift in Sources */,
+				B5DED82A25F63D54008B0994 /* FeedbackView.swift in Sources */,
 				B524056725F56CC300C806BB /* FeedbackForm.swift in Sources */,
 				B555B3AC25F3A39C00D57F16 /* ContentView.swift in Sources */,
 				B524057125F57D3100C806BB /* PHAsset.swift in Sources */,
 				B5DED81625F4F1C9008B0994 /* ScreenshotListener.swift in Sources */,
 				B524056225F5646000C806BB /* ScreenshotToast.swift in Sources */,
 				B555B3AA25F3A39C00D57F16 /* SlackBackApp.swift in Sources */,
+				B5DED83225F64027008B0994 /* PencilView.swift in Sources */,
 				B5DED81725F4F1C9008B0994 /* ImageUploadRequest.swift in Sources */,
 				B524056C25F57D1A00C806BB /* UIWindow.swift in Sources */,
 			);

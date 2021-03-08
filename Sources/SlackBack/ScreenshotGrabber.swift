@@ -110,3 +110,7 @@ class ScreenshotGrabber: ObservableObject {
 		}.eraseToAnyPublisher()
 	}
 }
+
+extension ScreenshotGrabber {
+	static let testImage = UIImage(contentsOf: Bundle.main.url(forResource: "screenshot", withExtension: "png")!)
+}
