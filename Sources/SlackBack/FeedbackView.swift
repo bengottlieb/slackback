@@ -28,7 +28,7 @@ struct FeedbackView: View {
 					} else {
 						Text("Enter your comments below.")
 							.multilineTextAlignment(.center)
-							.font(.title)
+							.font(.headline)
 							.padding()
 						
 						TextEditor(text: $text)
@@ -53,7 +53,7 @@ struct FeedbackView: View {
 					.padding(.vertical, 8)
 					.background(
 						RoundedRectangle(cornerRadius: 8)
-							.fill(Color(UIApplication.shared.currentScene?.windows.first?.tintColor ?? .blue))
+							.fill(Color.blue)
 					)
 				}
 			}
