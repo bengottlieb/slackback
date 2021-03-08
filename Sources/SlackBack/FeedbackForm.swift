@@ -9,30 +9,29 @@ import Foundation
 import UIKit
 import SwiftUI
 import Combine
+import Suite
 
 class FeedbackForm {
 	static weak var feedbackController: UIViewController?
-	static var currentShot: UIImage?
+	static var grabber: ScreenshotGrabber?
 	
 	static func present(date: Date?) {
 		guard let date = date else { return }
-		ScreenshotGrabber.instance.fetchAllScreenshots(since: date)
-			.compactMap { $0.last }
-			.flatMap { asset in asset.image() }
-			.compactMap { $0 }
+		
+		self.grabber = ScreenshotGrabber(date: date)
+		
+		self.grabber?.updateAsset()
+			.filter { $0 != nil }
 			.eraseToAnyPublisher()
-			.onSuccess { image in
-				self.present(image: image)
+			.onSuccess() { _ in
+				self.present(grabber: grabber!)
 			}
 	}
 	
-	static func present(image: UIImage) {
+	static func present(grabber: ScreenshotGrabber) {
 		if feedbackController != nil { return }
 		guard let window = UIApplication.shared.currentScene?.mainWindow, let root = window.rootViewController else { return }
-		Self.currentShot = image
-		let imageBinding = Binding<UIImage>(get: { currentShot ?? image }, set: { _ in })
-		//feedbackWindow = UIWindow.floating(hosting: FeedbackView(image: imageBinding))
-		let controller = UIHostingController(rootView: FeedbackView(presenter: root, image: imageBinding))
+		let controller = UIHostingController(rootView: FeedbackView(presenter: root, grabber: grabber))
 		window.rootViewController?.present(controller, animated: true, completion: nil)
 		
 		feedbackController = controller
@@ -43,8 +42,9 @@ class FeedbackForm {
 
 struct FeedbackView: View {
 	let presenter: UIViewController
+	@ObservedObject var grabber: ScreenshotGrabber
 	@State var text = ""
-	@Binding var image: UIImage
+	
 	@State var showing = false
 	
 	var body: some View {
@@ -62,9 +62,12 @@ struct FeedbackView: View {
 						TextEditor(text: $text)
 							.padding()
 						
-						Image(uiImage: image)
-							.resizable()
-							.aspectRatio(contentMode: .fit)
+						if let image = grabber.image {
+							Image(uiImage: image)
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.border(Color.gray, width: 0.5)
+						}
 						
 						Button(action: sendFeedback) {
 							Text("Send Feedback")
@@ -83,11 +86,13 @@ struct FeedbackView: View {
 			}
 		}
 		.onAppear() { withAnimation() { showing = true } }
+		.onDisappear() { ScreenshotListener.instance.reset() }
 	}
 	
 	func sendFeedback() {
 		presenter.dismiss(animated: true, completion: nil)
-		guard let image = FeedbackForm.currentShot else { return }
+		guard let image = grabber.image else { return }
+		
 		ImageUploadRequest(image: image, filename: "Screen Shot", comment: text)?.upload()
 			.receive(on: RunLoop.main)
 			.eraseToAnyPublisher()

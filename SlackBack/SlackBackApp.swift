@@ -29,11 +29,11 @@ struct SlackBackApp: App {
 		
 		ScreenshotListener.instance.startListening(withToken: token, channel: "test")
 		
-//		if let image = UIImage(contentsOf: Bundle.main.url(forResource: "screenshot", withExtension: "png")!) {
-//			DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-//				FeedbackForm.present(image: image)
-//			}
-//		}
+		if let image = UIImage(contentsOf: Bundle.main.url(forResource: "screenshot", withExtension: "png")!) {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+				FeedbackForm.present(grabber: ScreenshotGrabber(image: image))
+			}
+		}
 			
 //		DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
 //			ScreenshotToast.promptForComment(duration: 3) { cancelled in  print(cancelled ? "Canceled" : "Tapped") }

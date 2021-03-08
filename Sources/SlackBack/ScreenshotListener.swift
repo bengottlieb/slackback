@@ -50,4 +50,8 @@ public class ScreenshotListener {
 	func checkForRecentScreenshot(at date: Date?) {
 		FeedbackForm.present(date: date)
 	}
+	
+	func reset() {
+		lastScreenshotTakenAt = nil
+	}
 }

@@ -37,15 +37,57 @@ options.synchronous = YES;
 
 */
 
-class ScreenshotGrabber: NSObject, PHPhotoLibraryChangeObserver {
-	static let instance = ScreenshotGrabber()
+class ScreenshotGrabber: ObservableObject {
+	var image: UIImage?
+	let date: Date
+	var asset: PHAsset?
 	
-	func photoLibraryDidChange(_ changeInstance: PHChange) {
-		print(changeInstance)
+	init(image: UIImage) {
+		self.date = Date()
+		self.image = image
 	}
 	
-	func setup() {
+	init(date: Date) {
+		self.date = date
 		
+		self.fetchAsset(for: date)
+		
+		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification).eraseToAnyPublisher()
+			.onSuccess { result in
+				self.fetchAsset(for: date)
+			}
+	}
+	
+	var cancellable: AnyCancellable?
+	
+	func fetchAsset(for: Date) {
+		self.cancellable = fetchAllScreenshots(since: date)
+			.compactMap { $0.last }
+			.map { asset -> PHAsset in
+				self.asset = asset
+				return asset
+			}
+			.flatMap { asset in
+				asset.image()
+			}
+			.sink { image in
+				self.image = image
+				self.objectWillChange.send()
+			}
+	}
+	
+	func updateAsset() -> AnyPublisher<UIImage?, Never> {
+		guard let asset = asset else {
+			return Just<UIImage?>(nil).eraseToAnyPublisher()
+		}
+		return asset.image()
+			.receive(on: RunLoop.main)
+			.map { (image: UIImage?) -> UIImage? in
+				self.image = image
+				self.objectWillChange.send()
+				return image
+			}
+			.eraseToAnyPublisher()
 	}
 	
 	func fetchAllScreenshots(since date: Date) -> AnyPublisher<[PHAsset], Never> {
