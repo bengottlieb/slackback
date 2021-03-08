@@ -11,6 +11,7 @@ struct FeedbackView: View {
 	let presenter: UIViewController
 	@State var image: UIImage?
 	@State var text = ""
+	@State var canvas: PencilView.Canvas?
 	
 	@State var isEditing = false
 	
@@ -36,7 +37,7 @@ struct FeedbackView: View {
 					}
 					if let image = image {
 						Spacer()
-						canvas(for: image)
+						PencilView(backgroundImage: image, disabled: $isEditing.inverted)
 							.border(Color.gray, width: 0.5)
 							.overlay(editButtonOverlay)
 							.padding(isEditing ? 16 : 0)
@@ -59,22 +60,16 @@ struct FeedbackView: View {
 			.transition(.move(edge: .bottom))
 		}
 		.onDisappear() { ScreenshotListener.instance.reset() }
+		.onPreferenceChange(PencilViewDrawingKey.self) { newCanvas in
+			canvas = newCanvas
+		}
 	}
 	
-	func canvas(for image: UIImage) -> PencilView {
-		PencilView(backgroundImage: image)
-	}
-
 	var editButtonOverlay: some View {
 		ZStack(alignment: .topTrailing) {
 			Color.clear
 			
 			Button(action: {
-				if let image = image, let drawing = canvas(for: image).drawingImage() {
-					self.image = image.overlaying(drawing)
-					self.image = image
-					canvas(for: image).clearImage()
-				}
 				withAnimation() { isEditing.toggle() }
 			}) {
 				Image(isEditing ? .x_circle : .pencil_circle)
@@ -88,8 +83,12 @@ struct FeedbackView: View {
 	
 	func sendFeedback() {
 		presenter.dismiss(animated: true, completion: nil)
-		guard let image = image else { return }
+		guard var image = image else { return }
 		
+		if let drawing = canvas?.image {
+			image = image.overlaying(drawing)
+		}
+
 		ImageUploadRequest(image: image, filename: "Screen Shot", comment: text)?.upload()
 			.receive(on: RunLoop.main)
 			.eraseToAnyPublisher()

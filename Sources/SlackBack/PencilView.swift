@@ -9,55 +9,65 @@ import SwiftUI
 import PencilKit
 
 struct PencilView: View {
-	@Environment(\.undoManager) private var undoManager
-
 	var backgroundImage: UIImage
 	
 	@State var inkColor = UIColor.red
-	@State var cleared = false
-	@State var canvas: PKCanvasView?
+	@Binding var disabled: Bool
 	
-	func drawingImage() -> UIImage? {
-		guard let drawing = canvas?.drawing else { return nil }
-		return drawing.image(from: drawing.bounds, scale: UIScreen.main.scale)
-	}
+
+	@Environment(\.undoManager) private var undoManager
+	@StateObject var canvas = Canvas()
 	
-	func clearImage() {
-		canvas?.drawing = PKDrawing()
+	class Canvas: ObservableObject, Equatable {
+		let canvasView = PKCanvasView()
+		
+		static func ==(lhs: Canvas, rhs: Canvas) -> Bool { lhs.canvasView	== rhs.canvasView }
+		
+		var image: UIImage? {
+			canvasView.drawing.image(from: canvasView.drawing.bounds, scale: UIScreen.main.scale)
+		}
+		
+		func clearImage() {
+			canvasView.drawing = PKDrawing()
+		}
 	}
 	
 	var body: some View {
 		Image(uiImage: backgroundImage).resizable().aspectRatio(contentMode: .fit)
-				.overlay(PKCanvas(color: $inkColor, canvas: $canvas))
+			.overlay(PKCanvas(color: $inkColor, disabled: $disabled, canvasView: canvas.canvasView))
 				.overlay(VStack() {
 					Spacer()
 					HStack() {
-						Button(action: {undoManager?.undo() }) { Image(.arrow_uturn_left_circle).background(Circle().fill(Color(UIColor.systemBackground))).offset(x: -25, y: 20).padding(15) }
-						Spacer()
-						Button(action: {undoManager?.redo() }) { Image(.arrow_uturn_right_circle).background(Circle().fill(Color(UIColor.systemBackground))).offset(x: 25, y: 20).padding(15) }
+						if !disabled {
+							Button(action: {undoManager?.undo() }) { Image(.arrow_uturn_left_circle).imageScale(.large).background(Circle().fill(Color(UIColor.systemBackground))).offset(x: -25, y: 20).padding(15) }
+							Spacer()
+							Button(action: {undoManager?.redo() }) { Image(.arrow_uturn_right_circle).imageScale(.large).background(Circle().fill(Color(UIColor.systemBackground))).offset(x: 25, y: 20).padding(15) }
+						}
 					}
 				})
+			.preference(key: PencilViewDrawingKey.self, value: canvas)
 	}
 }
 
 struct PKCanvas: UIViewRepresentable {
 	@Binding var color: UIColor
-	@Binding var canvas: PKCanvasView?
+	@Binding var disabled: Bool
+	let canvasView: PKCanvasView
 	
 	class Coordinator: NSObject, PKCanvasViewDelegate {
-		var pkCanvas: PKCanvas
+		let canvasView: PKCanvasView
 		
-		init(_ pkCanvas: PKCanvas) {
-			self.pkCanvas = pkCanvas
+		init(_ canvas: PKCanvasView) {
+			canvasView = canvas
 		}
 	}
 	
 	func makeCoordinator() -> Coordinator {
-		Coordinator(self)
+		Coordinator(self.canvasView)
 	}
 	
 	func makeUIView(context: Context) -> PKCanvasView {
-		let canvas = PKCanvasView()
+		let canvas = context.coordinator.canvasView
 		canvas.backgroundColor = .clear
 		canvas.drawingPolicy = .anyInput
 		canvas.tool = PKInkingTool(.pen, color: color, width: 10)
@@ -66,24 +76,24 @@ struct PKCanvas: UIViewRepresentable {
 		canvas.drawing = PKDrawing()
 		canvas.tool = PKInkingTool(.pen, color: color, width: 10)
 
-		updateCanvas(with: canvas)
 		return canvas
 	}
 	
 	func updateUIView(_ canvasView: PKCanvasView, context: Context) {
-		updateCanvas(with: canvasView)
-	}
-	
-	func updateCanvas(with canvasView: PKCanvasView) {
-		if canvas == canvasView { return }
-		DispatchQueue.main.async {
-			canvas = canvasView
-		}
+		canvasView.isUserInteractionEnabled = !disabled
 	}
 }
 
 struct PencilView_Previews: PreviewProvider {
 	static var previews: some View {
-		PencilView(backgroundImage: ScreenshotGrabber.testImage!)
+		PencilView(backgroundImage: ScreenshotGrabber.testImage!, disabled: .constant(false))
 	}
+}
+
+struct PencilViewDrawingKey: PreferenceKey {
+		static var defaultValue: PencilView.Canvas?
+
+	static func reduce(value: inout PencilView.Canvas?, nextValue: () -> PencilView.Canvas?) {
+				value = nextValue()
+		}
 }
