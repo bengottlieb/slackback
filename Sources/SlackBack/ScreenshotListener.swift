@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 public class ScreenshotListener {
 	public static let instance = ScreenshotListener()
@@ -14,10 +15,21 @@ public class ScreenshotListener {
 	var lastScreenshotTakenAt: Date?
 	weak var screenshotPromptTimer: Timer?
 	
-	func startListening(withToken token: String, channel: String) {
+	public func startListening(withToken token: String, channel: String) {
+		if Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryUsageDescription") == nil {
+			return
+		}
+		
 		ImageUploadRequest.authToken = token
 		ImageUploadRequest.defaultChannel = channel
 		
+		PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+			if status == .authorized { self.setupNotifications() }
+		}
+		
+	}
+	
+	func setupNotifications() {
 		NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification).eraseToAnyPublisher()
 			.onSuccess { _ in
 				self.lastScreenshotTakenAt = Date()
@@ -31,20 +43,20 @@ public class ScreenshotListener {
 					}
 				}
 
-				self.screenshotPromptTimer = Timer.scheduledTimer(withTimeInterval: Self.screenShotHoverDuration, repeats: false) { [unowned self] _ in
-					self.checkForRecentScreenshot(at: self.lastScreenshotTakenAt)
-				}
+//				self.screenshotPromptTimer = Timer.scheduledTimer(withTimeInterval: Self.screenShotHoverDuration, repeats: false) { [unowned self] _ in
+//					self.checkForRecentScreenshot(at: self.lastScreenshotTakenAt)
+//				}
 			}
 
-		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification).eraseToAnyPublisher()
-			.onSuccess { result in
-				self.checkForRecentScreenshot(at: self.lastScreenshotTakenAt)
-			}
-
-		NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification).eraseToAnyPublisher()
-			.onSuccess { result in
-				self.screenshotPromptTimer?.invalidate()
-			}
+//		NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification).eraseToAnyPublisher()
+//			.onSuccess { result in
+//				self.checkForRecentScreenshot(at: self.lastScreenshotTakenAt)
+//			}
+//
+//		NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification).eraseToAnyPublisher()
+//			.onSuccess { result in
+//				self.screenshotPromptTimer?.invalidate()
+//			}
 	}
 	
 	func checkForRecentScreenshot(at date: Date?) {

@@ -12,7 +12,7 @@ import Combine
 class ScreenshotToast {
 	static var toastWindow: UIWindow?
 	
-	static func promptForComment(duration: TimeInterval = 5, tapped: @escaping (Bool) -> Void) {
+	static func promptForComment(duration: TimeInterval = 7, tapped: @escaping (Bool) -> Void) {
 		let view = ToastView(duration: duration, tapped: tapped) { CommentPrompt() }
 		toastWindow = UIWindow.floating(hosting: view)
 		
@@ -52,7 +52,7 @@ struct CommentPrompt: View {
 	var body: some View {
 		VStack(spacing: 3) {
 			Text("Screenshot Taken").font(.body)
-			Text("Edit it to send feedback, or tap to send now").font(.caption)
+			Text("Tap to Edit and Send Feedback").font(.caption)
 		}
 	}
 }
@@ -74,8 +74,8 @@ struct ToastView<Content: View>: View {
 		VStack() {
 			if showing {
 				contentView
-					.padding(.horizontal, 4)
-					.padding(4)
+					.padding(.horizontal, 8)
+					.padding(8)
 					.background(RoundedRectangle(cornerRadius: 8)
 												.fill(Color(UIColor.systemBackground)))
 					.overlay(RoundedRectangle(cornerRadius: 8)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedbackView: View {
 	let presenter: UIViewController
-	@State var image: UIImage?
+	@ObservedObject var grabber: ScreenshotGrabber
 	@State var text = ""
 	@State var canvas: PencilView.Canvas?
 	
@@ -35,7 +35,7 @@ struct FeedbackView: View {
 							.padding()
 						
 					}
-					if let image = image {
+					if let image = grabber.image {
 						Spacer()
 						PencilView(backgroundImage: image, disabled: $isEditing.inverted)
 							.border(Color.gray, width: 0.5)
@@ -83,7 +83,7 @@ struct FeedbackView: View {
 	
 	func sendFeedback() {
 		presenter.dismiss(animated: true, completion: nil)
-		guard var image = image else { return }
+		guard var image = grabber.image else { return }
 		
 		if let drawing = canvas?.image {
 			image = image.overlaying(drawing)
@@ -104,6 +104,6 @@ struct FeedbackView: View {
 
 struct FeedbackView_Previews: PreviewProvider {
 	static var previews: some View {
-		FeedbackView(presenter: UIViewController(), image: ScreenshotGrabber.testImage!)
+		FeedbackView(presenter: UIViewController(), grabber: ScreenshotGrabber(image: ScreenshotGrabber.testImage!))
 	}
 }

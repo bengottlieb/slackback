@@ -53,7 +53,7 @@
 		B524056B25F57D1A00C806BB /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		B524057025F57D3100C806BB /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		B524057525F591BE00C806BB /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
-		B524057A25F5A25E00C806BB /* Suite */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Suite; path = ../Suite; sourceTree = "<group>"; };
+		B524058425F66CAF00C806BB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B555B3A625F3A39C00D57F16 /* SlackBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B555B3A925F3A39C00D57F16 /* SlackBackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackBackApp.swift; sourceTree = "<group>"; };
 		B555B3AB25F3A39C00D57F16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		B555B39D25F3A39C00D57F16 = {
 			isa = PBXGroup;
 			children = (
-				B524057A25F5A25E00C806BB /* Suite */,
+				B524058425F66CAF00C806BB /* Package.swift */,
 				B5DED81225F4F1C9008B0994 /* Sources */,
 				B555B3A825F3A39C00D57F16 /* SlackBack */,
 				B555B3BA25F3A3A200D57F16 /* SlackBackTests */,

@@ -12,6 +12,8 @@ import UIKit
 /*
 	Need to go to https://api.slack.com/apps/[YOUR APP ID]/install-on-team
 	<Reinstall to Workspace>
+
+	Also be sure to add an OAuth scope for files:write
 	
 	Then in the channel (web or app) select "More…" > "Add Apps", and add the test app to your channel
 */

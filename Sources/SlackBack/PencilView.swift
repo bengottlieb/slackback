@@ -24,7 +24,7 @@ struct PencilView: View {
 		static func ==(lhs: Canvas, rhs: Canvas) -> Bool { lhs.canvasView	== rhs.canvasView }
 		
 		var image: UIImage? {
-			canvasView.drawing.image(from: canvasView.drawing.bounds, scale: UIScreen.main.scale)
+			canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
 		}
 		
 		func clearImage() {

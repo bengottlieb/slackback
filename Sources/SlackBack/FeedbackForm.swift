@@ -31,7 +31,7 @@ class FeedbackForm {
 	static func present(grabber: ScreenshotGrabber) {
 		if feedbackController != nil { return }
 		guard let window = UIApplication.shared.currentScene?.mainWindow, let root = window.rootViewController else { return }
-		let controller = UIHostingController(rootView: FeedbackView(presenter: root, image: grabber.image))
+		let controller = UIHostingController(rootView: FeedbackView(presenter: root, grabber: grabber))
 		window.rootViewController?.present(controller, animated: true, completion: nil)
 		
 		feedbackController = controller

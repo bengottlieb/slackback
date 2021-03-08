@@ -80,7 +80,7 @@ class ScreenshotGrabber: ObservableObject {
 		guard let asset = asset else {
 			return Just<UIImage?>(nil).eraseToAnyPublisher()
 		}
-		return asset.image()
+		return asset.editedImage()
 			.receive(on: RunLoop.main)
 			.map { (image: UIImage?) -> UIImage? in
 				self.image = image
